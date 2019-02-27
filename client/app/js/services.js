@@ -1351,7 +1351,6 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
               }
             });
 
-
             for(i=0; i<answers[field.id].length; i++) {
               entry = answers[field.id][i];
 
@@ -1363,8 +1362,8 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
                   entry.required_status = false;
                 } else {
                   entry.required_status = true;
-                  for (i=0; i<field.options.length; i++) {
-                    if (entry[field.options[i].id]) {
+                  for (j=0; j<field.options.length; j++) {
+                    if (entry[field.options[j].id]) {
                       entry.required_status = false;
                       break;
                     }
